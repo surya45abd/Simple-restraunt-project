@@ -1,0 +1,392 @@
+.reservation-section {
+  background-color: var(--color-surface-warm);
+}
+
+.reservation-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 6vw, 90px);
+  align-items: start;
+}
+
+.reservation-title {
+  font-size: clamp(38px, 5vw, 62px);
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+
+.reservation-title em {
+  font-style: italic;
+  color: var(--color-olive);
+}
+
+.reservation-lead {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-ink-muted);
+  margin-bottom: 32px;
+}
+
+/* Perks list */
+.reservation-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.perk-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.perk-bullet {
+  color: var(--color-terracotta);
+  font-size: 10px;
+}
+
+/* Hours Card */
+.reservation-hours-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  padding: 22px 24px;
+  border-radius: var(--radius-xs);
+}
+
+.hours-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--color-olive);
+  margin-bottom: 6px;
+}
+
+.hours-detail {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.hours-detail strong {
+  font-size: 14px;
+  color: var(--color-ink);
+}
+
+.hours-detail span {
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+.hours-note {
+  font-size: 11px;
+  color: var(--color-ink-faint);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hours-note a {
+  color: var(--color-terracotta);
+  text-decoration: underline;
+}
+
+/* Form Styles */
+.reservation-card-wrapper {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  padding: clamp(28px, 4vw, 42px);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.col-half {
+  grid-column: span 1;
+}
+
+.col-full {
+  grid-column: span 2;
+}
+
+.form-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.form-label span {
+  text-transform: none;
+  font-weight: 400;
+  color: var(--color-ink-faint);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xs);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--color-olive);
+  box-shadow: 0 0 0 3px rgba(72, 86, 50, 0.12);
+  background-color: #ffffff;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+/* Seating Radio Pills */
+.seating-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.seating-pill-option {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.seating-pill-option:hover {
+  background: var(--color-surface-warm);
+}
+
+.seating-pill-option.selected {
+  border-color: var(--color-olive);
+  background: var(--color-olive-soft);
+  box-shadow: 0 0 0 1px var(--color-olive);
+}
+
+.seating-label-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 2px;
+}
+
+.seating-label-desc {
+  font-size: 10px;
+  color: var(--color-ink-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Submit row */
+.submit-row {
+  margin-top: 10px;
+}
+
+.reserve-submit-btn {
+  padding: 16px;
+  font-size: 14px;
+}
+
+.submit-disclaimer {
+  font-size: 11px;
+  color: var(--color-ink-faint);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Confirmation Card */
+.booking-confirmation-card {
+  padding: 12px;
+}
+
+.confirmation-header {
+  text-align: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: 24px;
+}
+
+.confirmation-check-icon {
+  color: var(--color-olive);
+  margin-bottom: 12px;
+}
+
+.confirmation-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-olive);
+  margin-bottom: 6px;
+}
+
+.confirmation-title {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: var(--color-ink);
+}
+
+.confirmation-code {
+  font-size: 12px;
+  color: var(--color-ink-muted);
+}
+
+.confirmation-code strong {
+  color: var(--color-terracotta);
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.confirmation-details-box {
+  background: var(--color-surface-warm);
+  border-radius: var(--radius-xs);
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.confirm-row:last-of-type {
+  border-bottom: none;
+}
+
+.confirm-label {
+  font-size: 12px;
+  color: var(--color-ink-muted);
+}
+
+.confirm-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.confirm-note-box {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-line);
+}
+
+.confirm-note-text {
+  font-size: 12px;
+  white-space: pre-wrap;
+  color: var(--color-ink);
+  background: #ffffff;
+  padding: 10px;
+  border-radius: var(--radius-xs);
+  margin-top: 6px;
+}
+
+/* Bill Card on Confirmation */
+.confirm-bill-card {
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-terracotta);
+  border-radius: var(--radius-xs);
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.bill-card-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.bill-card-icon {
+  color: var(--color-terracotta);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bill-card-info strong {
+  display: block;
+  font-size: 14px;
+  color: var(--color-ink);
+  margin-bottom: 2px;
+}
+
+.bill-card-info p {
+  font-size: 12px;
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+.confirm-bill-btn-row {
+  display: flex;
+  gap: 10px;
+}
+
+.confirm-download-btn {
+  flex: 1.2;
+  padding: 11px 16px;
+  font-size: 12px;
+}
+
+.confirm-download-btn.success {
+  background: #2e7d32;
+}
+
+.confirm-view-bill-btn {
+  flex: 0.8;
+  padding: 11px 16px;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .reservation-layout {
+    grid-template-columns: 1fr;
+  }
+  .seating-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .col-half {
+    grid-column: span 2;
+  }
+}

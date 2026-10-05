@@ -1,0 +1,212 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-surface-darker);
+  color: #ffffff;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2400&q=88");
+  background-position: center 55%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.85);
+  transform: scale(1.02);
+  transition: transform 10s ease-out;
+}
+
+.hero:hover .hero-bg {
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(20, 24, 18, 0.65) 0%, rgba(14, 16, 12, 0.92) 80%),
+              linear-gradient(180deg, rgba(14, 16, 12, 0.4) 0%, rgba(14, 16, 12, 0.85) 100%);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1240px;
+  width: 100%;
+}
+
+/* Status Pill */
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #55d67f;
+  box-shadow: 0 0 10px #55d67f;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Typography */
+.hero-text-block {
+  max-width: 720px;
+}
+
+.hero-title {
+  font-size: clamp(52px, 7.5vw, 98px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold-light);
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.hero-lead {
+  font-size: clamp(16px, 1.8vw, 19px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 520px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+/* CTA Group */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-bottom: 56px;
+}
+
+.hero-btn-main {
+  font-size: 14px;
+  padding: 16px 32px;
+}
+
+.hero-menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: color var(--transition-fast);
+}
+
+.hero-menu-link:hover {
+  color: var(--color-gold-light);
+}
+
+.arrow-down-bounce {
+  animation: bounce 1.8s infinite ease-in-out;
+  color: var(--color-gold-light);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* Highlights Grid */
+.hero-badges-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  max-width: 800px;
+}
+
+.hero-badge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.badge-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-light);
+  flex-shrink: 0;
+}
+
+.hero-badge-item strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.hero-badge-item p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Editorial vertical tag */
+.hero-editorial-tag {
+  position: absolute;
+  right: 24px;
+  bottom: 40px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.45);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 90svh;
+  }
+  .hero-badges-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .hero-editorial-tag {
+    display: none;
+  }
+}

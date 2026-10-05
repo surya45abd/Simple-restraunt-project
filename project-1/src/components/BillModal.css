@@ -1,0 +1,285 @@
+.bill-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  background-color: rgba(18, 22, 16, 0.82);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.bill-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  background-color: #ffffff;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bill-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-paper-alt);
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.bill-modal-close:hover {
+  background: var(--color-terracotta);
+  color: #ffffff;
+}
+
+/* Receipt Paper Styling */
+.receipt-paper {
+  padding: 32px 36px;
+  overflow-y: auto;
+  flex: 1;
+  background: #faf8f5;
+  font-family: var(--font-sans);
+}
+
+.receipt-header {
+  text-align: center;
+  padding-bottom: 18px;
+  border-bottom: 2px dashed rgba(32, 36, 29, 0.2);
+}
+
+.receipt-brand-logo {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -0.5px;
+}
+
+.receipt-brand-logo .dot {
+  color: var(--color-terracotta);
+}
+
+.receipt-location {
+  font-size: 11px;
+  color: var(--color-ink-muted);
+  line-height: 1.5;
+  margin: 6px 0 10px;
+}
+
+.receipt-stamp {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-olive-dark);
+  background: var(--color-olive-soft);
+  padding: 4px 12px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(72, 86, 50, 0.2);
+}
+
+/* Receipt Meta */
+.receipt-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin: 18px 0;
+  font-size: 11.5px;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: var(--color-ink-faint);
+  margin-right: 6px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.meta-val {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.receipt-divider {
+  height: 1px;
+  border-top: 1px dashed rgba(32, 36, 29, 0.2);
+  margin: 16px 0;
+}
+
+/* Items Table */
+.receipt-items-table {
+  font-size: 12px;
+}
+
+.receipt-table-header {
+  display: grid;
+  grid-template-columns: 36px 1fr 64px 64px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--color-ink-muted);
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(32, 36, 29, 0.1);
+}
+
+.receipt-table-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 64px 64px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(32, 36, 29, 0.05);
+}
+
+.td-qty {
+  font-weight: 700;
+  color: var(--color-olive);
+}
+
+.td-item {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.td-price {
+  color: var(--color-ink-muted);
+  text-align: right;
+}
+
+.td-total {
+  font-weight: 700;
+  color: var(--color-ink);
+  text-align: right;
+}
+
+/* Tip Selector */
+.receipt-tip-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14px 0;
+  font-size: 11px;
+}
+
+.tip-label {
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.tip-buttons-row {
+  display: flex;
+  gap: 6px;
+}
+
+.tip-btn {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xs);
+  background: #ffffff;
+  color: var(--color-ink);
+  transition: all var(--transition-fast);
+}
+
+.tip-btn.active {
+  background: var(--color-olive);
+  color: #ffffff;
+  border-color: var(--color-olive);
+}
+
+/* Totals */
+.receipt-totals-section {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px 0;
+  font-size: 12px;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-ink-muted);
+}
+
+.grand-total-line {
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 2px solid var(--color-ink);
+  font-size: 15px;
+  color: var(--color-ink);
+}
+
+.grand-amount {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--color-terracotta);
+}
+
+/* Footer Notes */
+.receipt-footer-notes {
+  text-align: center;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(32, 36, 29, 0.2);
+}
+
+.receipt-footer-notes .motto {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-gold);
+  margin-bottom: 2px;
+}
+
+.receipt-footer-notes .sub-motto {
+  font-size: 11px;
+  color: var(--color-ink-faint);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Modal Actions */
+.bill-modal-actions {
+  display: flex;
+  gap: 12px;
+  padding: 18px 24px;
+  background: #ffffff;
+  border-top: 1px solid var(--color-line);
+}
+
+.download-pdf-btn {
+  flex: 1;
+  padding: 13px;
+}
+
+.download-pdf-btn.success {
+  background: #2e7d32;
+}
+
+.print-receipt-btn {
+  padding: 13px 20px;
+}
+
+@media (max-width: 500px) {
+  .bill-modal-actions {
+    flex-direction: column;
+  }
+  .receipt-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
